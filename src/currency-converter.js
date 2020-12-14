@@ -59,11 +59,7 @@
             CAD: 0.017
         }  
     };
-    console.log(rates);
-    console.log(rates[initialCurrency]);
-    console.log(rates[initialCurrency][targetCurrency]);
-
-
+    
 // --------------------------------------------------
 // Step 4: Ensure that a conversion rate exists
 // --------------------------------------------------
@@ -72,7 +68,14 @@
 
 // If the user supplies an invalid initial or target currency, display a meaningful
 // warning message and exit the program.
-
+    if (rates[initialCurrency] === undefined) {
+        console.log('Sorry, intial currency is invalid');
+        process.exit();
+    }
+    if (rates[initialCurrency] !== undefined && rates[initialCurrency][targetCurrency] === undefined) {
+        console.log('Sorry, target currency is invalid');
+        process.exit();
+    }
 
 
 // --------------------------------------------------
