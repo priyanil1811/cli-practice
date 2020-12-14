@@ -21,6 +21,7 @@
     console.log('The amount is:', amount);
     console.log('The initial Currency is:', initialCurrency);
     console.log('The target Currency is:', targetCurrency);
+
 // --------------------------------------------------
 // Step 2: Validate user input
 // --------------------------------------------------
@@ -28,9 +29,11 @@
 
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
-
-
-
+    if (amount === undefined || initialCurrency === undefined || targetCurrency === undefined) {
+        console.log('Sorry, you did not provide the amount, initial currency, or target currency.');
+        process.exit();
+    }
+    
 // --------------------------------------------------
 // Step 3: Define currency conversion rates
 // --------------------------------------------------
