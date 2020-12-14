@@ -33,7 +33,7 @@
         console.log('Sorry, you did not provide the amount, initial currency, or target currency.');
         process.exit();
     }
-    
+
 // --------------------------------------------------
 // Step 3: Define currency conversion rates
 // --------------------------------------------------
@@ -45,7 +45,23 @@
 
 // The conversion rates do not have to be accurate, athough this resource contains
 // up-to-date rate information: https://www.xe.com/
-
+    var rates = {
+        USD: {
+            CAD: 2,
+            INR: 70
+        },
+        CAD: {
+            USD: 0.5,
+            INR: 55
+        },
+        INR: {
+            USD: 0.014,
+            CAD: 0.017
+        }  
+    };
+    console.log(rates);
+    console.log(rates[initialCurrency]);
+    console.log(rates[initialCurrency][targetCurrency]);
 
 
 // --------------------------------------------------
