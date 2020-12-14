@@ -5,6 +5,11 @@ function validateUserInput(amount, initialCurrency, targetCurrency) {
     }
 }
 
+function getRate(rates, initialCurrency, targetCurrency) {
+    return rates[initialCurrency][targetCurrency];
+}
+
 module.exports = {
-    validateUserInput,
+    validateUserInput, 
+    getRate,
 };
