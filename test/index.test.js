@@ -10,14 +10,22 @@
 // file. In this case we've defined the function and the corresponding test in the
 // same file for illustrative and learning purposes.
 
-function myCoolFunction() {
-  return 'Wow, what a cool function';
-}
+var { getRate } = require('../src/functions');
 
-describe('myCoolFunction()', () => {
-  test('should return the message: "Wow, what a cool function"', () => {
-    const result = myCoolFunction();
+describe('getRate()', function()  {
+  test('return the rate when rates, initial currency and target currency provided', function() {
+    var rates = {
+      USD: {
+          CAD: 2,
+          INR: 70
+      },
+    };
+    var initialCurrency = 'USD';
+    var targetCurrency = 'INR';
 
-    expect(result).toBe('Wow, what a cool function');
+    var rate = getRate(rates, initialCurrency, targetCurrency);
+      
+    expect(rate).toBe(70);
   });
+
 });
