@@ -8,6 +8,8 @@
 // differently. There are many paths and approaches that result in a perfectly
 // valid finished product.
 
+var { validateUserInput } = require('./functions');
+
 // --------------------------------------------------
 // Step 1: Capture user input
 // --------------------------------------------------
@@ -18,10 +20,6 @@
     var initialCurrency = process.argv[3];  // This will contain the second input.
     var targetCurrency = process.argv[4];  // This will contain the third input.
 
-    console.log('The amount is:', amount);
-    console.log('The initial Currency is:', initialCurrency);
-    console.log('The target Currency is:', targetCurrency);
-
 // --------------------------------------------------
 // Step 2: Validate user input
 // --------------------------------------------------
@@ -29,10 +27,8 @@
 
 // If any of the required information is missing, display a meaningful message
 // and exit the program.
-    if (amount === undefined || initialCurrency === undefined || targetCurrency === undefined) {
-        console.log('Sorry, you did not provide the amount, initial currency, or target currency.');
-        process.exit();
-    }
+
+    validateUserInput(amount, initialCurrency, targetCurrency);
 
 // --------------------------------------------------
 // Step 3: Define currency conversion rates
